@@ -10,7 +10,8 @@ class User(db.Model):
     age = db.Column(db.Integer, unique=False, nullable=False)
     gender = db.Column(db.String(120), unique=False, nullable=False)
     country = db.Column(db.String(120), unique=False, nullable=False)
-    #is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    mascot = db.Column(db.String(120), unique=False, nullable=False)
+    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.username
