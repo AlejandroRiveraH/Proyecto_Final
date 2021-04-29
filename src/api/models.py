@@ -22,8 +22,3 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
-
-    #user = User( email = <email_value>, password = <username_value>)
-    #db.session.add(user)
-    #db.session.commit()    
-
