@@ -13,19 +13,17 @@ api = Blueprint('api', __name__)
 @api.route('/createUser', methods=['POST'])
 def create_User():
     id=request.json.get("id",None)
-    email=request.json.get("email",None)
+    nombre=request.json.get("nombre",None)
     password=request.json.get("password",None)
-    age=request.json.get("age",None)
+    birthday=request.json.get("birthday",None)
     gender=request.json.get("gender",None)
-    country=request.json.get("country",None)
-    mascot=request.json.get("mascot",None)
-    is_active=request.json.get("is_active",None)
+    email=request.json.get("email",None)
+       
 
-    user=User(id=id, email=email, password=password, age=age, gender=gender, country=country, 
-    mascot=mascot, is_active=is_active)
+    user=User(id=id, nombre=nombre, password=password, birthday=birthday, gender=gender, email=email)
     db.session.add(user)
     db.session.commit()
 
-    return jsonify({"user"}) 
+    return jsonify({"user":"ok"}) 
 
    
